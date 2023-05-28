@@ -31,11 +31,11 @@
     color: #ffffff;
   }
   .bg-3 { 
-    background-image:(linear-gradient(to top, #17202A, black, black);
+    background-image:linear-gradient(to top, #17202A, black, #17202A); 
     color: white;
   }
   .bg-4 { 
-    background-image:linear-gradient(to top, black, #17202A); 
+    background-image:linear-gradient(to top, #17202A, black); /* Black Gray */
     color: white;
   }
   .container-fluid {
@@ -70,9 +70,8 @@
 }
 
 
-
-  /* Media Queries */
-    @media (max-width: 767px) {
+/* Media Queries */
+@media (max-width: 767px) {
       /* Styles for screens smaller than 768px */
       .container-fluid.bg-1 h3.margin {
         margin: 20px;
@@ -98,14 +97,7 @@
       .container-fluid.bg-1 h3.margin {
         margin: 80px;
       }
-    } 
-   
-   
-   
-   
-   
-   
-   
+    }
   </style>
 
 
@@ -126,7 +118,8 @@
 <!-- Third Container (Grid) -->
 <div class="container-fluid bg-3 text-center">    
   <h3 class="margin">কিছু বার্তা >>></h3><br>
- 
+  <hr style="color:white;">
+
   <div class="row">
     <div class="col-sm-4">
         <p style="text-align: justify; color:white;">Happy birthday to my fellow warrior of laughter and keeper of countless cherished memories. Together, we've fought battles of laughter, created epic adventures, and woven a tapestry of friendship that will forever be cherished.</p>
@@ -171,7 +164,6 @@
 
 <!-- Footer -->
 <footer class="container-fluid bg-4 text-center">
-  
     <p style="color: white; text-decoration: none;"><a  target="_blank" href="https://www.instagram.com/proy_______">- PR</a></p> 
     <p>🫂🎁🎊🎉🤍🧿</p>
 </footer>
