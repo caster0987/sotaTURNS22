@@ -1,184 +1,74 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
- 
-  <title>HBD Sota</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
- <link rel="icon" type="image/x-icon" href="https://scontent.fmaa12-3.fna.fbcdn.net/v/t1.6435-9/125964826_1098505257265423_7602644493518012734_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=174925&_nc_ohc=qhhPM0wmL04AX_oADaS&_nc_ht=scontent.fmaa12-3.fna&oh=00_AfAldUGz_IuAZ91B08Cn9r1mh9MTaqJqdbXI2Gn_oS6IXA&oe=64A78135">
+<title>Loading...</title>
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="icon" type="image/x-icon" href="https://scontent.fmaa12-3.fna.fbcdn.net/v/t1.6435-9/125964826_1098505257265423_7602644493518012734_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=174925&_nc_ohc=qhhPM0wmL04AX_oADaS&_nc_ht=scontent.fmaa12-3.fna&oh=00_AfAldUGz_IuAZ91B08Cn9r1mh9MTaqJqdbXI2Gn_oS6IXA&oe=64A78135">
+<script src="dot.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <style>
-   *{box-sizing: border-box;}
-   ::selection {
-        color: grey;
-}
-  body {
-    font: 20px Montserrat, sans-serif;
-    line-height: 1.8;
-    color: #f5f6f7;
-  }
-  p {font-size: 16px;}
-  .margin {margin-bottom: 45px;}
-  .bg-1 { 
-    /* background-image:linear-gradient(to top  , grey, black);  
-    color: #ffffff;
-    font-weight: 700; */
-    background-image: url('img/vid1.mp4');
-    background-repeat: no-repeat;
     
-   
-  }
-  .bg-2 { 
-    background-color: #474e5d; /* Dark Blue */
-    color: #ffffff;
-  }
-  .bg-3 { 
-    background-image:linear-gradient(to top, #17202A, black, #17202A); 
-    color: white;
-  }
-  .bg-4 { 
-    background-image:linear-gradient(to bottom, #17202A, black); /* Black Gray */
-    color: white;
-  }
-  .container-fluid {
-    padding-top: 50px;
-    padding-bottom: 50px;
-    
-  }
-  .navbar {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    border: 0;
-    border-radius: 0;
-    margin-bottom: 0;
-    font-size: 12px;
-    letter-spacing: 5px;
-  }
-  .navbar-nav  li a:hover {
-    color: #1abc9c !important;
-  }
-
- 
-
-
-  .bg-video {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  object-fit: cover;
-}
-
-
-/* Media Queries */
-@media (max-width: 767px) {
-      /* Styles for screens smaller than 768px */
-      .container-fluid.bg-1 h3.margin {
-        margin: 20px;
-      }
+    body {
+      font-family: Arial, sans-serif;
     }
 
-    @media (min-width: 768px) and (max-width: 991px) {
-      /* Styles for screens between 768px and 991px */
-      .container-fluid.bg-1 h3.margin {
-        margin: 40px;
-      }
+    .loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      background-color: #17202A;
+      z-index: 9999;
     }
 
-    @media (min-width: 992px) and (max-width: 1199px) {
-      /* Styles for screens between 992px and 1199px */
-      .container-fluid.bg-1 h3.margin {
-        margin: 60px;
-      }
+    .countdown {
+      font-size: 2rem;
+      margin-bottom: 10px;
     }
-
-    @media (min-width: 1200px) {
-      /* Styles for screens larger than 1200px */
-      .container-fluid.bg-1 h3.margin {
-        margin: 80px;
-      }
+    .countdown, .message {
+      font-size: 3.5rem;
+      margin-bottom: 10px;
+      color: black;
     }
   </style>
-
-
 </head>
 <body>
+  <div class="loader">
+    <div class="countdown" style="font-size: 12rem; color:whitesmoke;">3</div>
+    <div class="message" style="color:yellow;"></div>
+  </div>
 
+  <script>
+    $(document).ready(function() {
+      var countdownElement = $('.countdown');
+      var messageElement = $('.message');
+      var countdownValue = 3;
 
+      function countdown() {
+        countdownElement.text(countdownValue);
+        countdownValue--;
 
-<!-- First Container -->
-<div class="container-fluid bg-1 text-center">
-    <h3 style="background-color:white; margin:80px; border-radius: 7px; color:black" class="margin"><b>DeAr Sota!</b></h3>
-  <img src="https://scontent.fmaa12-3.fna.fbcdn.net/v/t1.6435-9/125964826_1098505257265423_7602644493518012734_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=174925&_nc_ohc=zFT_5aL3tvAAX_mP-G7&_nc_ht=scontent.fmaa12-3.fna&oh=00_AfAW4Ode0t6C783XPbr7qYwIVP3bCFOORzCoqXmVZ9AeTA&oe=649900B5" class="img-responsive img-circle margin" style="display:inline; opacity: 0;" alt="xyz" width="350" height="350">
-  <h3 style="background-color:white; margin:auto; border-radius: 7px; color:black"><b>HaPpY tWeNtY tWo 🎉🫂</b></h3>
-</div>
+        if (countdownValue < 0) {
+          messageElement.text('Loading...');
+          openWebpage();
+        } else {
+          setTimeout(countdown, 1000);
+        }
+      }
 
+      function openWebpage() {
+        messageElement.text('Here we go..!');
+        setTimeout(function() {
+          window.location.href = 'content.html';
+        }, 2000);
+      }
 
-
-<!-- Third Container (Grid) -->
-<div class="container-fluid bg-3 text-center">    
-  <h3 class="margin">কিছু বার্তা >>></h3><br>
-  <hr style="color:white;">
-
-  <div class="row">
-    <div class="col-sm-4">
-        <p style="text-align: justify; color:white;">Happy birthday to my fellow warrior of laughter and keeper of countless cherished memories. Together, we've fought battles of laughter, created epic adventures, and woven a tapestry of friendship that will forever be cherished.</p>
-      
-        <img style="border-radius: 5px;" src="img/img2.jpg" class="img-responsive margin" style="width:100%" alt="Image">
-        
-     
-    </div>
-    <div class="col-sm-4"> 
-        <p style="text-align: justify; color:white;">May your voice soar to new heights, your artistic brushstrokes paint a world of beauty, and your talents shine brighter than ever before.</p>
-     
-        <img style="border-radius: 5px;" src="img/img4.jpg" class="img-responsive margin" style="width:100%" alt="Image">
-      
-    </div>
-    <div class="col-sm-4"> 
-        <p  style="text-align: justify; color:white;">Amidst the stormy seas of disputes and the shadows of unfavorable circumstances, our friendship stands tall like an unbreakable pillar. As if touched by divine grace, it remains an eternal bond, unyielding and resilient. May the mighty forces that guide us keep our friendship forged in the fires of resilience and make it timeless, for in each other's company.</p>
-     
-        <img style="border-radius: 5px;" src="img/img3.jpg" class="img-responsive margin" style="width:100%" alt="Image">
-      
-    </div>
-    <button class="btn btn-primary btn-dark" id="playButton" style="color:black; background-color: white; text-decoration: none; font-style: bold;">Click here</button>
-  <audio id="myAudio" src="this.mp3"></audio>
-   
- </div>
-  <hr>
-</div>
-
-
-
-
-
-
-
-<div class="container-fluid bg-video">
-  <video autoplay loop muted class="bg-video">
-    <source src="img/vid1.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-</div>
-
-
-
-
-
-<!-- Footer -->
-<footer class="container-fluid bg-4 text-center">
-    <p style="color: white; text-decoration: none;"><a  target="_blank" href="https://www.instagram.com/proy_______">- PR</a></p> 
-    <p>🫂🎁🎊🎉🤍🧿</p>
-</footer>
-
-</body>
-<noscript>
-    <style>body { display:none; }</style>
-    <meta http-equiv="refresh" content="0; url=nojs/shownothing.html">
-  </noscript>
-<script src="dot.js"></script>
-</html>
+      countdown();
+    });
+  </script>
+</head>
