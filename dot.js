@@ -24,6 +24,6 @@ function playSongWithAlert() {
     "United we stand, no matter the strife, bound by a bond, throughout our life.";
     alert(message);
     audio.play();
-  }, 1500);
+  }, 1000);
 }
 playButton.addEventListener('click', playSongWithAlert);
