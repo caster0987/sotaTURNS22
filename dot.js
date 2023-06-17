@@ -16,7 +16,6 @@ const audio = document.getElementById('myAudio');
 function playSongWithAlert() {  
   audio.play();
   setTimeout(function() {
-    audio.play();
     const message = "A brother gifted with artistic might, drawing colors, a world takes flight.\n" +
     "His voice, a melody, sweet and pure, singing songs that forever endure.\n" +
     "Through pages, he delves into tales. Reading, his spirit ever prevails.\n" +
