@@ -4,12 +4,14 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <link rel="icon" type="image/x-icon" href="https://scontent.fmaa12-3.fna.fbcdn.net/v/t1.6435-9/125964826_1098505257265423_7602644493518012734_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=174925&_nc_ohc=qhhPM0wmL04AX_oADaS&_nc_ht=scontent.fmaa12-3.fna&oh=00_AfAldUGz_IuAZ91B08Cn9r1mh9MTaqJqdbXI2Gn_oS6IXA&oe=64A78135">
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-  <style>
-    
-    body {
-      font-family: Arial, sans-serif;
+  
+  <style> 
+  @import url('https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@100;200;300;500;900&family=Indie+Flower&display=swap');
+  *{font-family: 'Grenze Gotisch', cursive;
+  font-family: 'Indie Flower', cursive;}
+  body {
+    font-family: Arial, sans-serif;
     }
 
     .loader {
@@ -39,11 +41,41 @@
 </head>
 <body>
   <div class="loader">
-    <div class="countdown" style="font-size: 12rem; color:whitesmoke;">3</div>
-    <div class="message" style="color:yellow;">Ruko zara!</div>
+    <div class="countdown" style="font-size: 12rem; color:whitesmoke;"></div>
+    <div class="message" style="color:yellow;">Ruko zara | Sabar karo</div>
   </div>
 </body>
   <script>
+    $(document).ready(function() {
+      var countdownElement = $('.countdown');
+      var messageElement = $('.message');
+      var countdownValue = 3;
+
+      function countdown() {
+        countdownElement.text(countdownValue);
+        countdownValue--;
+        
+
+        if (countdownValue < 0) {
+          messageElement.text('Loading...');
+          openWebpage();
+        } else {
+          setTimeout(countdown, 1000);
+        }
+      }
+
+      function openWebpage() {
+        messageElement.text('Loading...');
+        setTimeout(function() {
+          window.location.href = 'index.html';
+        }, 2000);
+      }
+
+      countdown();
+    });
+  </script>
+
+ <script>
     $(document).ready(function() {
       var countdownElement = $('.countdown');
       var messageElement = $('.message');
@@ -85,4 +117,5 @@ document.addEventListener("keydown", function (event) {
     }
 });
   </script>
+
 
