@@ -22,6 +22,8 @@ function playSongWithAlert() {
     "Amidst new faces that may appear, he stands by me, unwaveringly near.\n" +
     "With his talents and loyalty true, my brother's love, forever in view.\n" +
     "United we stand, no matter the strife, bound by a bond, throughout our life.";
-    alert(message)}, 100);
+    alert(message);
+    audio.play();
+  }, 100);
 }
 playButton.addEventListener('click', playSongWithAlert);
