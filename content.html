@@ -189,4 +189,10 @@
     <meta http-equiv="refresh" content="0; url=nojs/shownothing.html">
   </noscript>
 <script src="dot.js"></script>
+ <script>
+  if (performance.navigation.type === 1) {
+    // Page is being refreshed or reloaded
+    window.location.href = 'index.html';
+  }
+</script>
 </html>
